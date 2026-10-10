@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["5B29WKCMHJ.com.twillscott.nightcap"],
+        "components": [
+          { "/": "/join/*", "comment": "Nightcap pairing links" }
+        ]
+      }
+    ]
+  }
+}
