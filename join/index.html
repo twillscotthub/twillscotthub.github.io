@@ -6,26 +6,40 @@
   body { margin:0; min-height:100vh; display:grid; place-items:center;
          background:#0e100e; color:#ece7dd; text-align:center; padding:1.5rem;
          font:17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
-  h1 { font-size:2rem; margin:0 0 .5rem; font-weight:500; }
-  p { color:#a9a399; margin:0 0 1.25rem; }
-  .code { font:600 2rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
-          letter-spacing:.35em; color:#d9a95c; margin:0 0 .35rem; padding-left:.35em; }
+  h1 { font-size:1.9rem; margin:0 0 .5rem; font-weight:500; }
+  p { color:#a9a399; margin:0 0 1.1rem; }
+  .code { font:600 2.1rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+          letter-spacing:.35em; color:#d9a95c; margin:.2rem 0 .3rem; padding-left:.35em; }
   .hint { font-size:.9rem; color:#76736c; }
   a.btn { display:inline-block; background:#d9a95c; color:#0e100e; font-weight:600;
-          text-decoration:none; padding:.85rem 1.6rem; border-radius:999px; }
+          text-decoration:none; padding:.85rem 1.7rem; border-radius:999px; margin:.35rem; }
+  a.quiet { display:inline-block; color:#d9a95c; text-decoration:none;
+            padding:.6rem 1rem; font-size:.95rem; }
 </style></head>
 <body><main>
   <h1>Your partner is waiting</h1>
-  <p>Open this on the iPhone you will use Nightcap on.</p>
+  <p id="lead">Open this on the iPhone you will use Nightcap on.</p>
+
   <p class="code" id="code">······</p>
-  <p class="hint" id="hint">Enter this code in Nightcap after installing.</p>
-  <p><a class="btn" href="https://apps.apple.com/app/id6819069052">Get Nightcap</a></p>
+  <p class="hint" id="hint">Enter this in Nightcap to pair.</p>
+
+  <p>
+    <!-- Reached only when the universal link did not fire, so the plain
+         scheme is the way back into an app that is already installed. -->
+    <a class="btn" id="open" href="#">Open in Nightcap</a>
+  </p>
+  <p><a class="quiet" href="https://apps.apple.com/app/id6819069052">Don't have it yet? Get Nightcap</a></p>
+
 <script>
-  // Shown only when the app is not installed: a universal link is intercepted
-  // by iOS before this page is ever requested.
-  var code = new URLSearchParams(location.search).get('c');
-  if (code) { document.getElementById('code').textContent = code.toUpperCase(); }
-  else { document.getElementById('code').style.display = 'none';
-         document.getElementById('hint').textContent = 'Ask your partner for their code.'; }
+  var code = (new URLSearchParams(location.search).get('c') || '').toUpperCase()
+                .replace(/[^A-Z0-9]/g, '');
+  if (code) {
+    document.getElementById('code').textContent = code;
+    document.getElementById('open').href = 'nightcap://join?c=' + encodeURIComponent(code);
+  } else {
+    document.getElementById('code').style.display = 'none';
+    document.getElementById('hint').textContent = 'Ask your partner to send their invitation again.';
+    document.getElementById('open').href = 'nightcap://join';
+  }
 </script>
 </main></body></html>
