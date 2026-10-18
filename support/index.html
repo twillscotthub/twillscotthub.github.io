@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nightcap Support</title>
+<style>
+  :root {
+    --ink: #0e100e; --fg: #ece7dd; --dim: #a9a399; --faint: #76736c;
+    --amber: #d9a95c; --line: #2a2d29; --surface: #151815;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --ink: #fbf9f5; --fg: #1d1f1c; --dim: #4a4d47; --faint: #6e716a;
+      --amber: #8a5d14; --line: #e2ddd3; --surface: #f4f1ea;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ink); color: var(--fg);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 42rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+  h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 .25rem; font-weight: 600; }
+  h2 {
+    font-size: 1.15rem; margin: 2.5rem 0 .6rem; color: var(--amber);
+    font-weight: 600; letter-spacing: .01em;
+  }
+  .updated { color: var(--faint); font-size: .9rem; margin: 0 0 2rem; }
+  p { margin: 0 0 1rem; color: var(--dim); }
+  strong { color: var(--fg); font-weight: 600; }
+  ul { margin: 0 0 1rem; padding-left: 1.2rem; color: var(--dim); }
+  li { margin-bottom: .5rem; }
+  a { color: var(--amber); }
+  .callout {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 12px; padding: 1rem 1.15rem; margin: 0 0 2rem;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line);
+    color: var(--faint); font-size: .9rem;
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Nightcap Support</h1>
+  <p class="updated">Updated 18 October 2026</p>
+
+  <div class="callout">
+    <p><strong>Need a hand, or want to tell us something?</strong></p>
+    <p>Email <a href="mailto:twillscott@hotmail.com?subject=Nightcap%20support">twillscott@hotmail.com</a>.
+      Nightcap is made by one person, so replies are personal but not instant —
+      usually a day or two.</p>
+    <p>You can also reach this from inside the app: the gear icon, then
+      <strong>Questions or feedback</strong>. That version includes your app and
+      iOS version automatically, which saves a round trip.</p>
+  </div>
+
+  <h2>Nightcap needs two people</h2>
+  <p>The app does nothing on its own. One of you taps <strong>Invite your
+    partner</strong> and sends the code or link; the other opens it, or enters
+    the six characters. Until then there is deliberately nothing to use.</p>
+  <p>If you tap your own invitation, nothing happens — an invitation has to be
+    accepted by the other person. Send it to them instead.</p>
+
+  <h2>Why can't I check in?</h2>
+  <p>Each couple sets a deadline to seal. Check-in opens twelve hours before
+    that deadline and closes on it, and the twelve hours after it belong to no
+    evening. If you see <strong>Tonight has closed</strong>, the window has
+    passed; the screen tells you when it opens again.</p>
+  <p>You can move the deadline at any time in Settings, and the window follows
+    it immediately.</p>
+
+  <h2>What my partner sees</h2>
+  <p>Only what you <em>both</em> chose. If you pick something and they don't,
+    neither of you is told — not that the other one picked it, and not that
+    they didn't. Nothing in the app or its notifications reveals whether your
+    partner has checked in at all.</p>
+  <p>A gratitude note crosses only if you tick the box to share it.</p>
+
+  <h2>Notifications</h2>
+  <p>At most two a night: a nudge two hours before your deadline if you haven't
+    sealed, and one when there is something to see. Nothing a notification says
+    reveals what you chose, because a lock screen is a public surface.</p>
+
+  <h2>Calendar and photos</h2>
+  <p>Both are optional, both are used only on your phone, and nothing from
+    either is ever uploaded. They let Nightcap suggest wording for a gratitude
+    note based on what was on your calendar or in your photos today. Decline
+    both and the app works the same; you'll just write your own.</p>
+  <p>iOS only offers each prompt once. If you declined and want to change your
+    mind, it's in iOS Settings under Nightcap.</p>
+
+  <h2>Leaving, and deleting</h2>
+  <p>Either of you can unpair at any time, on your own, without the other
+    agreeing — that is deliberate. Tonight's choices are destroyed; gratitude
+    already sent stays with whoever received it, because it was given to them.</p>
+  <p><strong>Delete account</strong> in Settings removes your account, your
+    whole gratitude archive and any pending choices, on our servers as well as
+    your phone. It cannot be undone.</p>
+
+  <footer>
+    <p><a href="/">Nightcap</a> &middot; <a href="/nightcap-privacy/">Privacy policy</a></p>
+  </footer>
+</main>
+</body>
+</html>
